@@ -1,0 +1,16 @@
+Create Meteor Project
+	meteor create <projectname>
+	
+	meteor add accounts-password
+	meteor add twbs:bootstrap
+	meteor add fortawesome:fontawesome
+	meteor add iron:router
+	meteor add aldeed:autoform
+	meteor add aldeed:collection2
+	meteor add multiply:iron-router-progress
+	meteor add natestrauser:select2
+	meteor add zimme:select2-bootstrap3-css
+	meteor add aldeed:autoform-select2
+	//meteor add mrt:flash-messages
+	meteor add matteodem:easy-search
+	meteor add themeteorchef:bert
