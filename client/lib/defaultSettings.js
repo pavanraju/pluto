@@ -1,0 +1,1 @@
+Bert.defaults.hideDelay = 5000;

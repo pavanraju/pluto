@@ -1,0 +1,40 @@
+<template name="registerPage">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1 class="panel-title">Sign Up</h1>
+				</div>
+				<div class="panel-body">
+					{{#autoForm id="userRegisterForm" schema="Schema.registerUserFormSchema" type="method" meteormethod="userRegisterMethod" afFieldInput-placeholder="schemaLabel" }}
+						<div class="form-group {{#if afFieldIsInvalid name='fullName'}}has-error{{/if}}">
+							{{> afFieldInput name="fullName" }}
+						    {{#if afFieldIsInvalid name='fullName'}}
+						    	<span class="help-block">{{{afFieldMessage name='fullName'}}}</span>
+						    {{/if}}
+						</div>
+						<div class="form-group {{#if afFieldIsInvalid name='email'}}has-error{{/if}}">
+							{{> afFieldInput name="email" }}
+						    {{#if afFieldIsInvalid name='email'}}
+						    	<span class="help-block">{{{afFieldMessage name='email'}}}</span>
+						    {{/if}}
+						</div>
+						<div class="form-group {{#if afFieldIsInvalid name='password'}}has-error{{/if}}">
+							{{> afFieldInput name="password" type="password"}}
+						    {{#if afFieldIsInvalid name='password'}}
+						    	<span class="help-block">{{{afFieldMessage name='password'}}}</span>
+						    {{/if}}
+						</div>
+						<div class="form-group {{#if afFieldIsInvalid name='mobileNumber'}}has-error{{/if}}">
+							{{> afFieldInput name="mobileNumber"}}
+						    {{#if afFieldIsInvalid name='mobileNumber'}}
+						    	<span class="help-block">{{{afFieldMessage name='mobileNumber'}}}</span>
+						    {{/if}}
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-lg btn-primary btn-block">Register</button>
+						</div>
+					{{/autoForm}}
+				</div>
+			</div>
+		</div>
+</template>

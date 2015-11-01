@@ -1,0 +1,13 @@
+<template name="sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="{{activeRouteClass  'home'}}">
+						<a href="{{pathFor 'home'}}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+					</li>
+					<li class="{{activeRouteClass  'job.list' 'job.create' 'job.update'}}">
+						<a href="{{pathFor 'job.list'}}">Posts</a>
+					</li>
+					<li class="{{activeRouteClass  'user.list' 'user.create'}}">
+						<a href="{{pathFor 'user.list'}}">Users</a>
+					</li>
+				</ul>
+</template>

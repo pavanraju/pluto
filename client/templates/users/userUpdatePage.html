@@ -1,0 +1,17 @@
+<template name="userUpdatePage">
+	
+	<h1 class="page-header">Create User</h1>
+	<div class="row">
+
+		{{#autoForm schema="Schema.createUserFormSchema" id="userUpdateForm" type="method" meteormethod="userUpdateMethod" template="bootstrap3-horizontal" }}
+			{{> afQuickField name="fullName" label-class="col-sm-3" input-col-class="col-sm-9"}}
+			{{> afQuickField name="email" label-class="col-sm-3" input-col-class="col-sm-9"}}
+			{{> afQuickField name="mobileNumber" label-class="col-sm-3" input-col-class="col-sm-9"}}
+			{{> afQuickField name="isOrgAdmin" label-class="col-sm-3" input-col-class="col-sm-9"}}
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">Add User</button>
+			</div>
+		{{/autoForm}}
+
+	</div>
+</template>

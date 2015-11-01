@@ -1,23 +1,23 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-    // code to run on server at startup
+    if(Locations.find().count()<1){
+    		Locations.insert({name : "Bangalore"});
+    		Locations.insert({name : "Mumbai"});
+    		Locations.insert({name : "Chennai"});
+    	}
+    	if(Skill.find().count()<1){
+    		Skill.insert({name : "Meteor"});
+    		Skill.insert({name : "Node.js"});
+    		Skill.insert({name : "Java"});
+    		Skill.insert({name : "Project Manager"});
+    		Skill.insert({name : "Business Developer"});
+    		Skill.insert({name : "Html"});
+    		Skill.insert({name : "Spring"});
+    		Skill.insert({name : "Idea.js", status : 1});
+    	}
   });
 }
