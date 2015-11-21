@@ -1,4 +1,5 @@
 Template.registerPage.events({
+  /*
     'submit form' : function(event, template){
         var fullnameVar = event.target.fullName.value;
         var emailVar = event.target.email.value;
@@ -8,21 +9,25 @@ Template.registerPage.events({
         var user = {
           email : emailVar,
           password : passwordVar,
-		  profile : {
+		      profile : {
             fullName : fullnameVar,
             mobile : mobileVar,
-			isOrgAdmin : true
+            isOrgAdmin : true
           }
         };
-        
         Accounts.createUser(user, function(error){
           if(error){
-            Bert.alert(error.reason,"danger");
+            if(error.error===403){
+              Bert.alert("Email already exists. Please choose another","danger");
+            }else{
+              Bert.alert(error.reason,"danger");
+            }
           }else{
-            Meteor.users.update({ _id: Meteor.userId() }, {$set: {"orgId": Meteor.userId()}});
+            Meteor.users.update(Meteor.userId(), {$set: {orgId: Meteor.userId()}});
             Bert.alert("Welcome to Pluto.","info");
             Router.go('home');
           }
         });
     }
+    */
   });

@@ -13,3 +13,11 @@ Meteor.publish('allLocationsPublish', function(){
 Meteor.publish('allSkillsPublish', function(){
   return Skill.find();
 });
+
+Meteor.publish('allUsersPublish', function(){
+  return Meteor.users.find();
+});
+
+Meteor.publish('singleUserPublish', function(id){
+  return Meteor.users.find(id);
+});

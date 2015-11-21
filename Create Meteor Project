@@ -1,6 +1,8 @@
 Create Meteor Project
 	meteor create <projectname>
 	
+	meteor add check
+	meteor add random
 	meteor add accounts-password
 	meteor add twbs:bootstrap
 	meteor add fortawesome:fontawesome

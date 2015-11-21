@@ -18,7 +18,7 @@ AutoForm.hooks({
     onError: function(formType, error) {
       if(error.error){
         if(error.error===403){
-          Bert.alert("Email already exists in the system. Please choose another","danger");
+          Bert.alert("Email already exists. Please choose another","danger");
         }else{
           Bert.alert(error.reason,"danger");
         }
@@ -26,6 +26,15 @@ AutoForm.hooks({
     }
   },
   userRegisterForm : {
+    after : {
+      'method' : function(error, loginData){
+        Meteor.loginWithPassword(loginData.email, loginData.password, function(e) {
+          if(e.error){
+            Bert.alert(e.reason,"danger");
+          }
+        })
+      }
+    },
     onSuccess: function(operation, user) {
       Bert.alert("Welcome to track, enjoy madi","success");
       Router.go('home');
@@ -33,7 +42,7 @@ AutoForm.hooks({
     onError: function(formType, error) {
       if(error.error){
         if(error.error===403){
-          Bert.alert("Email already exists in the system. Please choose another","danger");
+          Bert.alert("Email already exists. Please choose another","danger");
         }else{
           Bert.alert(error.reason,"danger");
         }
