@@ -5,14 +5,19 @@
 5) Forgot Password Page
 6) Reset Password Page
 7) User Profile Page
-8) User Page - 
-	Update user pending
+8) User Page
+	Emp Id Pending
 9) Job Page - 
 	Job Id while creating it has to be autoincrement for the organization, mongo updation pending
+
 10) Search Implementation
 11) Pagination Implementation
+
+
 12) Workflow Page
 13) Assign Workflow to Job
 14) Applicants Page
 15) Applicants Workflow page
 16) Dashboard Page
+
+17) Roles

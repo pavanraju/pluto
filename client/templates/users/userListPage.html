@@ -6,6 +6,15 @@
 		</div>
 		
 	</div>
-	
+	<div class="row">
+		<div class="list-group">
+			{{#each userListData}}
+				<a href="{{pathFor 'user.update'}}" class="list-group-item">
+					<h4 class="list-group-item-heading">Name : {{profile.fullName}}</h4>
+				    <p class="list-group-item-text">Email : {{userEmail}}</p>
+				</a>
+			{{/each}}
+		</div>
+	</div>
 
 </template>
