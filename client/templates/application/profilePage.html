@@ -4,7 +4,7 @@
 	      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{currentUser.profile.fullName}} <span class="caret"></span></a>
 	      <ul class="dropdown-menu">
 	        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a></li>
-	        <li><a href="#"><i class="fa fa-exchange fa-fw"></i>Change Password</a></li>
+	        <li><a href="{{pathFor 'changePassword'}}"><i class="fa fa-exchange fa-fw"></i>Change Password</a></li>
 	        <li role="separator" class="divider"></li>
 	        <li><a href="#" class="logout"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
 	      </ul>

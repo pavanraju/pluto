@@ -7,7 +7,7 @@
 				<div class="panel-body">
 					{{#autoForm id="userRegisterForm" schema="Schema.registerUserFormSchema" type="method" meteormethod="userRegisterMethod" afFieldInput-placeholder="schemaLabel" }}
 						<div class="form-group {{#if afFieldIsInvalid name='fullName'}}has-error{{/if}}">
-							{{> afFieldInput name="fullName" }}
+							{{> afFieldInput name="fullName" placeholder="Name"}}
 						    {{#if afFieldIsInvalid name='fullName'}}
 						    	<span class="help-block">{{{afFieldMessage name='fullName'}}}</span>
 						    {{/if}}

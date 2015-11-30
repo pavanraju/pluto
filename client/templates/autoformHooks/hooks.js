@@ -29,14 +29,14 @@ AutoForm.hooks({
     after : {
       'method' : function(error, loginData){
         Meteor.loginWithPassword(loginData.email, loginData.password, function(e) {
-          if(e.error){
+          if(e){
             Bert.alert(e.reason,"danger");
           }
         })
       }
     },
     onSuccess: function(operation, user) {
-      Bert.alert("Welcome to track, enjoy madi","success");
+      Bert.alert("Welcome to Pluto, enjoy madi","success");
       Router.go('home');
     },
     onError: function(formType, error) {
@@ -48,8 +48,5 @@ AutoForm.hooks({
         }
       }
     }
-  },
-  userLoginForm : {
-    
   }
 });

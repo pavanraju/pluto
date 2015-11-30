@@ -1,5 +1,16 @@
 Meteor.publish('allJobsPublish', function(){
-  return Job.find();
+	var userInfo = Meteor.users.findOne({_id: this.userId});
+	var query = {};
+	if(userInfo.profile.isOrgAdmin){
+		query = {
+			"orgId" : this.userId
+		}
+	}else{
+		query = {
+			"createdBy" : this.userId
+		}
+	}
+  return Job.find(query);
 });
 
 Meteor.publish('singleJobPublish', function(id){
@@ -15,7 +26,20 @@ Meteor.publish('allSkillsPublish', function(){
 });
 
 Meteor.publish('allUsersPublish', function(){
-  return Meteor.users.find();
+	var userInfo = Meteor.users.findOne({_id: this.userId});
+	var query = {};
+	if(this.userId){
+		if(userInfo.profile.isOrgAdmin){
+			query = {
+				"profile.orgId" : this.userId
+			}
+		}else{
+			query = {
+				"profile.orgId" : userInfo.profile.orgId
+			}
+		}
+	}
+  return Meteor.users.find(query);
 });
 
 Meteor.publish('singleUserPublish', function(id){
